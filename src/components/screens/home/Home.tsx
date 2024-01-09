@@ -1,7 +1,8 @@
 import { SubmitHandler, useForm } from "react-hook-form";
 import styles from "./Home.module.css";
+import { useState } from "react";
 
-const isSuccess = false;
+//const isSuccess = false;
 
 interface IFormState {
   name: string;
@@ -9,9 +10,26 @@ interface IFormState {
 }
 
 function Home() {
-  const { register, handleSubmit } = useForm<IFormState>();
+  const { register, handleSubmit, reset } = useForm<IFormState>();
+  const [isLoading, setIsLoading] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
   const onSubmit: SubmitHandler<IFormState> = (data) => {
-    console.log(data);
+    setIsLoading(true);
+    fetch("http://localhost:5000/api", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (!data) return;
+
+        setIsSuccess(true);
+        reset();
+      })
+      .finally(() => setIsLoading(false));
   };
   return (
     <div className={styles.wrapper}>
@@ -23,7 +41,9 @@ function Home() {
             <h1>Hallo!</h1>
             <input type="name" placeholder="Имя" {...register("name")} />
             <input type="email" placeholder="E-mail" {...register("email")} />
-            <button>Введите данные</button>
+            <button disabled={isLoading}>
+              {isLoading ? "Загрузка....." : "Введите данные"}
+            </button>
           </>
         )}
       </form>
