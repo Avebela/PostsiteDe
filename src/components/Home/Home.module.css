@@ -3,7 +3,7 @@
 }
 
 .wrapper > form {
-  @apply w-max p-3 absolute left-5 top-5;
+  @apply w-max p-3 absolute left-5 top-5 shadow-xl;
   animation: slideIn 2s ease-in-out;
 }
 
@@ -13,6 +13,7 @@
 .wrapper > form > input {
   @apply block py-1.5 px-3 mb-2 w-full border border-transparent bg-black/30 placeholder:text-white/60 outline-none;
   transition: border-color 0.35s linear;
+  /* &:focus {} */
 }
 
 .wrapper > form > input:focus {

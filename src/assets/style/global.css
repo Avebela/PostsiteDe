@@ -10,11 +10,12 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: white;
-  background-color: black;
-  background-image: url("/fon.jpg");
+  /* color: rgb(157, 64, 64);
+  @apply bg-slate-700; */
+
+  /* background-image: url("/fon.jpg");
   background-size: cover;
-  background-repeat: no-repeat;
+  background-repeat: no-repeat; */
 }
 
 body {
