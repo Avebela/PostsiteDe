@@ -1,31 +1,51 @@
 import React, { useState } from "react";
-import classes from "./Form.module.css";
-import { useAddCardMutation } from "../../services/cards/index.js";
-import { useParams } from "react-router-dom";
-import {
-  useGetCardByIdQuery,
-  useDeleteCardMutation,
-  useUpdateCardMutation,
-} from "../../services/cards";
-//{ title, description, img, story }
-export const EditForm: React.FC = () => {
-  const { id } = useParams();
-  //const { data: card, isLoading } = useGetCardByIdQuery({ id });
+import classes from "./EditForm.module.css";
+//import { useAddCardMutation } from "../../services/cards/index.js";
+// import { useParams } from "react-router-dom";
+// import {
+//   useGetCardByIdQuery,
+//   useUpdateCardMutation,
+//   useDeleteCardMutation,
+// } from "../../services/cards";
 
-  const [updateCard, { isLoading: isUpdating }] = useUpdateCardMutation();
+export const EditablePostName = ({
+  //title: initialName,
+  formData: initialValue,
+  onUpdate,
+  onCancel,
+  isLoading = false,
+}: {
+  //title: string;
+  formData: { title: ""; description: ""; img: ""; story: "" };
+  onUpdate: (formData: {}) => void;
+  onCancel: () => void;
+  isLoading?: boolean;
+}) => {
+  const [formData, setFormData] = useState(initialValue);
 
-  const [formData, setFormData] = useState({
-    title: "",
-    description: "",
-    img: "",
-    story: "",
-    // title: { title } || "",
-    // description: { description } || "",
-    // img: { img } || "",
-    // story: { story } || "",
-  });
+  // const [title, setName] = useState(initialName);
 
-  const [fetchAddCard] = useAddCardMutation();
+  // const handleChange = ({
+  //   target: { value },
+  // }: React.ChangeEvent<HTMLInputElement>) => setName(value);
+
+  const handleUpdate = () => onUpdate(formData);
+  const handleCancel = () => onCancel();
+
+  // const { id } = useParams();
+  // const [isEditing, setIsEditing] = useState(false);
+
+  // const [updateCard, { isLoading: isUpdating }] = useUpdateCardMutation();
+  // const [deleteCard, { isLoading: isDeleting }] = useDeleteCardMutation();
+
+  //const initialValue = { title: "", description: "", img: "", story: "" };
+  // //const [card, setCard] = useState(null);
+
+  // const { data, isLoading } = useGetCardByIdQuery({ id });
+  // useEffect(() => {
+  //   // setCard(data);
+  //   setFormData(data);
+  // }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -40,45 +60,66 @@ export const EditForm: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault;
-    fetchAddCard(formData);
+    //   updateCard(formData);
+    onUpdate(formData);
+    //   setFormData(formData);
   };
 
   return (
-    <>
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Имя героя"
-          value={formData.title}
-          onChange={handleChange}
-        />
-
-        <input
-          type="text"
-          name="description"
-          placeholder="Описание"
-          value={formData.description}
-          onChange={handleChange}
-        />
-
-        <textarea
-          name="story"
-          placeholder="История о персонаже"
-          value={formData.story}
-          onChange={handleChange}
-        />
-
-        <input
-          type="text"
-          name="img"
-          placeholder="Ссылка на изображение"
-          value={formData.img}
-          onChange={handleChange}
-        />
-
-        <button type="submit">Отправить</button>
-      </form>
-    </>
+    <div className={classes.post_wrap}>
+      <div className={classes.post_item}>
+        <div className={classes.item_content}>
+          <form onSubmit={handleSubmit}>
+            <div>
+              {/* <input
+            type="text"
+            onChange={handleChange}
+            value={title}
+            disabled={isLoading}
+          /> */}
+            </div>
+            <div>
+              <div>
+                <button
+                  onClick={handleUpdate}
+                  // isLoading={isLoading}
+                >
+                  Update
+                </button>
+                <button onClick={handleCancel} disabled={isLoading} />
+              </div>
+            </div>
+            <input
+              type="text"
+              name="title"
+              placeholder="Имя героя"
+              value={formData.title}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="description"
+              placeholder="Описание"
+              value={formData.description}
+              onChange={handleChange}
+            />
+            <textarea
+              name="story"
+              placeholder="История о персонаже"
+              value={formData.story}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="img"
+              placeholder="Ссылка на изображение"
+              value={formData.img}
+              onChange={handleChange}
+            />
+            <button type="submit">Изменить</button>
+          </form>
+        </div>
+      </div>
+    </div>
   );
 };

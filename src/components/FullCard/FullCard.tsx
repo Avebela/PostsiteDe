@@ -1,11 +1,12 @@
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import classes from "./FullCard.module.css";
 import {
   useGetCardByIdQuery,
   useUpdateCardMutation,
   useDeleteCardMutation,
 } from "../../services/cards";
-
+import { Link } from "react-router-dom";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 
@@ -42,7 +43,7 @@ export const FullCard: FC = () => {
     );
   }
   return (
-    <>
+    <div className={classes.post_wrap}>
       {isEditing ? (
         <EditablePostName
           formData={card}
@@ -62,30 +63,33 @@ export const FullCard: FC = () => {
           isLoading={isUpdating}
         />
       ) : (
-        <>
-          <div>
-            <img src={card.img} alt={card.title} />
-            <h2>{card.title}</h2>
-            <p>{card.description}</p>
-            <h3>История</h3>
-            <p>{card.story}</p>
-          </div>
-          <div />
-          <div>
-            <div>
-              <button
-                onClick={() => setIsEditing(true)}
-                disabled={isDeleting || isUpdating}
-              >
-                {isUpdating ? "Updating..." : "Edit"}
-              </button>
-              <button onClick={() => deleteCard(id)} disabled={isDeleting}>
-                {isDeleting ? "Deleting..." : "Delete"}
-              </button>
+        <div className={classes.post_item}>
+          <div className={classes.item_content}>
+            {/* <img src={card.img} alt={card.title} /> */}
+            <div className={classes.item_body}>
+              <h3>{card.title}</h3>
+              <p>{card.description}</p>
+              <p>_____________________</p>
+              <p>{card.story}</p>
+
+              <div className={classes.item_footer}>
+                <div className={classes.link}>
+                  {/* <span>Подробнее</span> */}
+                  <button
+                    onClick={() => setIsEditing(true)}
+                    disabled={isDeleting || isUpdating}
+                  >
+                    {isUpdating ? "Updating..." : "Edit"}
+                  </button>
+                  <button onClick={() => deleteCard(id)} disabled={isDeleting}>
+                    {isDeleting ? "Deleting..." : "Delete"}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
-        </>
+        </div>
       )}
-    </>
+    </div>
   );
 };

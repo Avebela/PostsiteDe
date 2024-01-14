@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-//import classes from "./Form.module.css";
+import classes from "./EditForm.module.css";
 //import { useAddCardMutation } from "../../services/cards/index.js";
 // import { useParams } from "react-router-dom";
 // import {
@@ -21,7 +21,6 @@ export const EditablePostName = ({
   onCancel: () => void;
   isLoading?: boolean;
 }) => {
- 
   const [formData, setFormData] = useState(initialValue);
 
   // const [title, setName] = useState(initialName);
@@ -59,68 +58,58 @@ export const EditablePostName = ({
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault;
-    //   updateCard(formData);
-    onUpdate(formData);
-    //   setFormData(formData);
-  };
+  // const handleSubmit = (e: React.FormEvent<HTMLElement>) => {
+  //   e.preventDefault;
+  //   //   updateCard(formData);
+  //   onUpdate(formData);
+  //   //   setFormData(formData);
+  // };
 
   return (
-    <>
-      <div>
-        <div>
-          {/* <input
-            type="text"
-            onChange={handleChange}
-            value={title}
-            disabled={isLoading}
-          /> */}
-        </div>
-
-        <div>
-          <div>
+    <div className={classes.post_wrap}>
+      <div className={classes.post_item}>
+        <div className={classes.item_content}>
+          {/* <form onSubmit={handleSubmit}> */}
+          <div className={classes.item_body}>
+            <input
+              type="text"
+              name="title"
+              placeholder="Имя героя"
+              value={formData.title}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="description"
+              placeholder="Описание"
+              value={formData.description}
+              onChange={handleChange}
+            />
+            <textarea
+              name="story"
+              placeholder="История о персонаже"
+              value={formData.story}
+              onChange={handleChange}
+            />
+            <input
+              type="text"
+              name="img"
+              placeholder="Ссылка на изображение"
+              value={formData.img}
+              onChange={handleChange}
+            />
+            {/* <button type="submit">Изменить</button> */}
+            {/* </form> */}
             <button
               onClick={handleUpdate}
               // isLoading={isLoading}
             >
-              Update
+              Применить
             </button>
             <button onClick={handleCancel} disabled={isLoading} />
           </div>
         </div>
       </div>
-
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="title"
-          placeholder="Имя героя"
-          value={formData.title}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="description"
-          placeholder="Описание"
-          value={formData.description}
-          onChange={handleChange}
-        />
-        <textarea
-          name="story"
-          placeholder="История о персонаже"
-          value={formData.story}
-          onChange={handleChange}
-        />
-        <input
-          type="text"
-          name="img"
-          placeholder="Ссылка на изображение"
-          value={formData.img}
-          onChange={handleChange}
-        />
-        // <button type="submit">Изменить</button>
-      </form>
-    </>
+    </div>
   );
 };

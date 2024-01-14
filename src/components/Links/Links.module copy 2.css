@@ -27,7 +27,7 @@ body {
   transition: 0.3s linear;
 }
 .item_content {
-  background: #d6cbf3;
+  background: #413d4c;
   padding: 50px;
 }
 .item_icon {
@@ -36,7 +36,7 @@ body {
 .item_icon:before {
   content: "";
   font-family: FontAwesome;
-  color: #fb4b57;
+  color: #fb8f96;
   font-size: 40px;
   line-height: 1;
 }
@@ -64,7 +64,7 @@ body {
   transform: translateY(-20px);
 }
 .item_body {
-  color: #1d1813;
+  color: #fce9d0;
 }
 .item_body h3 {
   font-size: 25px;
@@ -88,7 +88,7 @@ body {
   font-size: 12px;
   text-transform: uppercase;
   font-weight: 600;
-  color: #262422;
+  color: #f5e2cd;
 }
 .link:before {
   content: "";
@@ -99,7 +99,7 @@ body {
   bottom: 0;
   height: 0.125rem;
   margin: auto;
-  background: #df666e;
+  background: #d28d92;
   transform: scaleX(0.2);
   transform-origin: left center;
   z-index: 0;

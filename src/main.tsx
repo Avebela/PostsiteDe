@@ -22,7 +22,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <BrowserRouter>
       <Provider store={store}>
-        <Links />
+        {/* <Links /> */}
         <App />
       </Provider>
     </BrowserRouter>
