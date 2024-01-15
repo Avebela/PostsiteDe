@@ -1,5 +1,5 @@
 import { useGetCardsQuery } from "../../services/cards";
-import { Card } from "../Card/Card";
+import { Card } from "./Card/Card";
 //import { Form } from "../Form/Form";
 import classes from "./Cards.module.css";
 

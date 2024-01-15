@@ -6,7 +6,7 @@ import "./assets/style/global.css";
 import { BrowserRouter } from "react-router-dom";
 import { Provider } from "react-redux";
 import { configureStore } from "@reduxjs/toolkit";
-import { cardsApi } from "./services/cards/cards";
+import { cardsApi } from "./services/cards/cards.api";
 import { setupListeners } from "@reduxjs/toolkit/query";
 import { Links } from "./components/Links/Links";
 

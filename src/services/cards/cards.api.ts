@@ -1,22 +1,5 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
-
-export interface Card {
-  id: string;
-  title: string;
-  description: string;
-  img: string;
-  story: string;
-}
-
-type CardsResponse = Card[];
-
-type NewCard = {
-  title: string;
-  description: string;
-  img: string;
-  story: string;
-  _id?: string;
-};
+import { Card, CardsResponse, NewCard } from "./cards.types";
 
 export const cardsApi = createApi({
   reducerPath: "cardsApi",

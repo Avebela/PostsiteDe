@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 
-import { EditablePostName } from "../../components/Form/EditForm";
+import { EditablePostName } from "../Form/EditForm/EditForm";
 
 export const FullCard: FC = () => {
   const { id } = useParams();
