@@ -10,6 +10,7 @@ export const Links = () => {
             <div className={classes.item_icon + " " + classes.group}></div>
             <div className={classes.item_body}>
               <h3>Мероприятия</h3>
+
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
                 feugiat a quam non blandit.

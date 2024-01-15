@@ -1,0 +1,21 @@
+.haupt h1 {
+  animation: slideIn 2s ease-in-out;
+  font-size: 40px;
+  text-align: center;
+  color: rgb(51, 33, 79);
+  /* display: flex;
+  align-self: center; */
+}
+.haupt.link {
+  text-decoration: none;
+}
+@keyframes slideIn {
+  from {
+    transform: translateY(-10%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(200%);
+    opacity: 1;
+  }
+}
