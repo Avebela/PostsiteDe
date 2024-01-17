@@ -1,0 +1,14 @@
+:root {
+  --textColor: rgb(119, 6, 17);
+  --yellow: rgb(220, 171, 24);
+}
+body {
+  font-family: "Open Sans", sans-serif;
+  color: var(--textColor);
+}
+
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 10px;
+}
