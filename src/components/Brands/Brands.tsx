@@ -24,6 +24,9 @@ export const Brands = () => {
           <li>
             <a href={`/cards`}>Работа</a>
           </li>
+          <li>
+            <a href={`/cards`}>Питание</a>
+          </li>
         </ul>
       </div>
     </section>

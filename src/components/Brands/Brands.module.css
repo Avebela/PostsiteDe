@@ -1,12 +1,13 @@
 .brands {
   padding: 60px, 0, 55px;
   background-color: rgb(119, 6, 17);
+  margin-bottom: 10px;
 }
 
 .brands__list {
   display: flex;
-  column-gap: 120px;
-  font-weight: 800;
+  column-gap: 85px;
+  font-weight: 400;
   font-size: 25px;
   line-height: 1.5;
   letter-spacing: 0.03em;

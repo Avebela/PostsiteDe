@@ -1,0 +1,79 @@
+.wrapper {
+  @apply w-screen min-h-60 relative;
+}
+
+.wrapper > form {
+  @apply w-max p-3 absolute left-5 top-5 shadow-xl;
+  /* // animation: slideIn 2s ease-in-out; */
+}
+
+.wrapper > form > h1 {
+  @apply text-2xl mb-3;
+}
+.wrapper > form > input {
+  @apply block py-1.5 px-3 mb-2 w-full border border-transparent bg-black/30 placeholder:text-white/60 outline-none;
+  transition: border-color 0.35s linear;
+  /* &:focus {} */
+}
+
+.wrapper > form > input:focus {
+  @apply border-[#ffb3c0];
+}
+
+.wrapper > form > button {
+  @apply text-lg font-medium uppercase py-1 px-4 border border-white inline-block mt-2 bg-transparent;
+
+  /* transition: box-shadow 0.4s linear; */
+}
+
+.wrapper > form > button:hover {
+  @apply bg-white/20;
+}
+
+/* .success {
+  @apply text-blue-400 text-2xl font-medium m-auto;
+  animation: fade 0.4s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+} */
+
+/* @keyframes slideIn {
+  from {
+    transform: translateX(-110%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+} */
+/* .item { 
+  border: 1px solid gray;
+} */
+
+/* .image {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  width: 100%;
+  height: 500px;
+} */
+
+/* .info {
+  padding: 10px;
+}
+.info h2 {
+  margin-bottom: 5px;
+}
+
+.info p {
+  margin-bottom: 10px;
+} */

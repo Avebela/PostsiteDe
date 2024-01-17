@@ -1,5 +1,5 @@
 import classes from "./Header.module.css";
-import logoImg from "../../img/icon/germany-flag.png";
+import logoImg from "../../img/icon/koelner-dom-mousepad.jpg";
 import { Link } from "react-router-dom";
 export const Header = () => {
   return (

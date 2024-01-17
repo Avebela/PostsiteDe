@@ -1,5 +1,6 @@
 import classes from "./Promo.module.css";
-import promoImg from "../../img/promo/Kölner_Dom_von_Osten.jpg";
+//import promoImg from "../../img/promo/Kölner_Dom_von_Osten.jpg";
+import promoImg from "../../img/promo/KölnDom.png";
 import { Link } from "react-router-dom";
 export const Promo = () => {
   return (

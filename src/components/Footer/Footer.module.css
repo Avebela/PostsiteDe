@@ -1,8 +1,8 @@
-.header {
+.footer {
   /* color: rgb(119, 6, 17); */
 }
 
-.header__row {
+.footer__row {
   display: flex;
   column-gap: 30px;
   align-items: center;
@@ -10,46 +10,45 @@
   padding: 10px 10px;
 }
 
-.header__logo {
+.footer__logo {
   display: flex;
   column-gap: 13px;
   align-items: center;
 }
-.header__logo span {
-  font-weight: 900;
-  font-size: 30px;
+.footer__logo span {
+  font-weight: 700;
+  font-size: 20px;
   line-height: 1.5;
   letter-spacing: 0.03em;
-  text-shadow: 5px 5px #adb2b7;
   /* color: rgb(119, 6, 17); */
   /* text-transform: uppercase; */
 }
-.header__logo img {
+.footer__logo img {
   width: 120px;
   height: 120px;
 }
 
-.header__nav {
+.footer__nav {
   font-weight: 500;
   font-size: 22px;
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
 
-.header__nav ul {
+.footer__nav ul {
   display: flex;
   column-gap: 65px;
   align-items: center;
 }
 
-.header__nav a {
+.footer__nav a {
   display: flex;
   column-gap: 65px;
   color: var(--textColor);
 }
 
-.header__nav__btn,
-a.header__nav__btn {
+.footer__nav__btn,
+a.footer__nav__btn {
   padding: 13px 22px 17px;
   background-color: black;
   /* // background-color: rgb(248, 230, 27); */
@@ -62,6 +61,6 @@ a.header__nav__btn {
   letter-spacing: -0.03em;
 }
 
-.header__nav__btn:hover {
+.footer__nav__btn:hover {
   opacity: 0.8;
 }

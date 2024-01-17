@@ -1,0 +1,16 @@
+.cards {
+  padding-top: 60px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.cards__header {
+  margin-bottom: 50px;
+}
+
+.cards__cards {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 50px;
+}
