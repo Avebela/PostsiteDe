@@ -32,7 +32,9 @@ export function Mail() {
       .finally(() => setIsLoading(false));
   };
   return (
-    <div className={classes.wrapper}>
+    <section className={classes.mail}>
+      {/* <div className="container">
+        <div className={classes.mail__content}> */}
       <form onSubmit={handleSubmit(onSubmit)}>
         {isSuccess ? (
           <h1>Вы подписаны на рассылку!</h1>
@@ -48,7 +50,9 @@ export function Mail() {
           </>
         )}
       </form>
-    </div>
+      {/* </div>
+      </div> */}
+    </section>
   );
 }
 

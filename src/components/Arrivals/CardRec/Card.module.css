@@ -5,6 +5,10 @@
   min-width: 300px;
 }
 
+.card * {
+  transition: 0.2s linear;
+}
+
 .card__img {
   margin-bottom: 28px;
   border-radius: 20px;
@@ -12,18 +16,23 @@
 
 .card:hover .card__img {
   /* opacity: 0.8; */
-  animation: opacity 1s ease-in-out;
+  /* animation: opacity 1s ease-in-out; */
+  /* transform: translateY(-20px); */
+  animation: transform 0.6s ease-in-out;
 }
 
-@keyframes opacity {
+@keyframes transform {
   0% {
-    opacity: 1;
+    transform: translateY(0px);
+    /* transition-delay: 0.05s; */
   }
   50% {
-    opacity: 0.8;
+    transform: translateY(-10px);
+    /* transition-delay: 0.1s; */
   }
   100% {
-    opacity: 1;
+    transform: translateY(0px);
+    /* transition-delay: translateY(0px); */
   }
 }
 

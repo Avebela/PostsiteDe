@@ -53,12 +53,31 @@
 
 .video__btn__wrapper::before {
   content: "";
+  /*content: "\2713";*/
   display: inline-block;
+  position: relative;
+  left: 0;
   width: 100px;
   height: 100px;
   background-image: url(../../img/icon/strelka-kl.png);
   background-repeat: no-repeat;
   opacity: 0.8;
+}
+
+.video__btn__wrapper:hover::before {
+  opacity: 1;
+  animation: slide 1s ease-in-out;
+}
+@keyframes slide {
+  0% {
+    left: 0;
+  }
+  50% {
+    left: 100px;
+  }
+  100% {
+    left: 0;
+  }
 }
 
 .video__btn {
