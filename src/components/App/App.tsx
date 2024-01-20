@@ -1,31 +1,31 @@
-import { Brands } from "../Brands/Brands";
-import { Header } from "../Header/Header";
-import { Promo } from "../Promo/Promo";
-import { Cards } from "../Cards/Cards";
-import { Video } from "../Video/Video";
-import { Footer } from "../Footer/Footer";
-import { Mail } from "../Mail/Mail";
-
 import { Routers } from "../Routers/Routers";
 import classes from "./App.module.css";
-import { Link } from "react-router-dom";
-import { Arrivals } from "../Arrivals/Arrivals";
+
+import { AuthProvider } from "../../hoc/AuthProvider";
 
 export const App = () => {
   return (
-    <div className={classes.haupt}>
-      <Header />
-      <Promo />
-      <Brands />
-      <Cards />
-      <Video />
-      <Arrivals />
-      <Mail />
-      <Footer />
-      <Routers />
-    </div>
+    // <AuthProvider>
+    <Routers />
+    // </AuthProvider>
   );
 };
+
+{
+  /* <Route path="type" element={<Blogpage />} />
+    <Route path="type/:id" element={<Singlepage />} />
+    <Route path="type/:id/edit" element={<Editpost />} /> */
+}
+{
+  /* <Route
+      path="type/new"
+      element={
+        <RequireAuth>
+          <Createpost />
+        </RequireAuth>
+      }
+    /> */
+}
 
 {
   /* <Link to={`/cards`} className={classes.link}>

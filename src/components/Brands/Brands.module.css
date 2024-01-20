@@ -18,3 +18,7 @@
 /* .brands__list a:visited {
   color: blue;
 } */
+
+.brands__list a:hover {
+  opacity: 0.7;
+}

@@ -21,7 +21,7 @@ export const Footer = () => {
               <li>
                 {/* <Link to={`/cards`} className={classes.link}>    Статьи
                 </Link> */}
-                <a href={`/cards`}>О нас</a>
+                <a href={`/about`}>О нас</a>
               </li>
               <li>
                 <a href={`/form`}>Контакты</a>
@@ -37,3 +37,7 @@ export const Footer = () => {
     </footer>
   );
 };
+
+{
+  /* <footer className="container">&copy; Nika</footer> */
+}

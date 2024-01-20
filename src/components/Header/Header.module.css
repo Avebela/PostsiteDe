@@ -20,8 +20,8 @@
   font-size: 30px;
   line-height: 1.5;
   letter-spacing: 0.03em;
-  text-shadow: 5px 5px #adb2b7;
-  /* color: rgb(119, 6, 17); */
+  text-shadow: 3px 3px #adb2b7;
+  color: var(--textColor);
   /* text-transform: uppercase; */
 }
 .header__logo img {

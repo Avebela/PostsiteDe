@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Form.module.css";
+import classes from "./Form.module.css";
 import { useAddCardMutation } from "../../services/cards/index.js";
 
 export const Form: React.FC = () => {
@@ -35,7 +35,7 @@ export const Form: React.FC = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
+    <section className={classes.newform}>
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -70,6 +70,6 @@ export const Form: React.FC = () => {
 
         <button type="submit">Отправить</button>
       </form>
-    </div>
+    </section>
   );
 };

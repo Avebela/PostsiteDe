@@ -4,6 +4,8 @@ export interface Card {
   description: string;
   img: string;
   story: string;
+  updatedAt: string;
+  createdAt: Date;
 }
 
 export type CardsResponse = Card[];

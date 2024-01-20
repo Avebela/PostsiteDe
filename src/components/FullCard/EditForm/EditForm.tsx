@@ -66,50 +66,51 @@ export const EditablePostName = ({
   // };
 
   return (
-    <div className={classes.post_wrap}>
-      <div className={classes.post_item}>
-        <div className={classes.item_content}>
-          {/* <form onSubmit={handleSubmit}> */}
-          <div className={classes.item_body}>
-            <input
-              type="text"
-              name="title"
-              placeholder="Имя героя"
-              value={formData.title}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="description"
-              placeholder="Описание"
-              value={formData.description}
-              onChange={handleChange}
-            />
-            <textarea
-              name="story"
-              placeholder="История о персонаже"
-              value={formData.story}
-              onChange={handleChange}
-            />
-            <input
-              type="text"
-              name="img"
-              placeholder="Ссылка на изображение"
-              value={formData.img}
-              onChange={handleChange}
-            />
-            {/* <button type="submit">Изменить</button> */}
-            {/* </form> */}
-            <button
-              onClick={handleUpdate}
-              // isLoading={isLoading}
-            >
-              Применить
-            </button>
-            <button onClick={handleCancel} disabled={isLoading} />
-          </div>
-        </div>
-      </div>
-    </div>
+    <section className={classes.editform}>
+      <form>
+        <input
+          type="text"
+          name="title"
+          placeholder="Имя героя"
+          value={formData.title}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="description"
+          placeholder="Описание"
+          value={formData.description}
+          onChange={handleChange}
+        />
+        <textarea
+          name="story"
+          placeholder="История о персонаже"
+          value={formData.story}
+          onChange={handleChange}
+        />
+        <input
+          type="text"
+          name="img"
+          placeholder="Ссылка на изображение"
+          value={formData.img}
+          onChange={handleChange}
+        />
+        {/* <button type="submit">Изменить</button> */}
+        {/* </form> */}
+        <button
+          onClick={handleUpdate}
+          // isLoading={isLoading}
+        >
+          Применить
+        </button>
+        <button onClick={handleCancel} disabled={isLoading}>
+          Отменить
+        </button>
+      </form>
+    </section>
   );
 };
+
+{
+  /* <form onSubmit={handleSubmit}> */
+}

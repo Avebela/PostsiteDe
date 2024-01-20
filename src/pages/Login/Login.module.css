@@ -1,4 +1,4 @@
-.mail {
+.login {
   /* @apply w-screen min-h-60 relative; */
   /* width: 100vw; */
   position: relative;
@@ -12,7 +12,7 @@
 .mail__content form {
  
 } */
-.mail form {
+.login form {
   /* @apply w-max p-3 absolute left-5 top-5 shadow-xl; */
   /* // animation: slideIn 2s ease-in-out; */
   display: block;
@@ -29,7 +29,7 @@
     0 8px 10px -6px rgb(0 0 0 / 0.1);
 }
 
-.mail form h1 {
+.login form h1 {
   /* //@apply text-2xl mb-3; */
   font-size: 25px;
   font-weight: 400;
@@ -37,7 +37,7 @@
   text-align: center;
   margin-bottom: 0.75rem; /* 12px */
 }
-.mail form input {
+.login form input {
   /* @apply block py-1.5 px-3 mb-2 w-full border border-transparent bg-black/30 placeholder:text-white/60 outline-none;
   transition: border-color 0.35s linear; */
   /* &:focus {} */
@@ -63,7 +63,7 @@
   /* transition: border-color 0.4s linear; */
 }
 
-.mail form input:focus {
+.login form input:focus {
   /* @apply border-[#ffb3c0]; */
   /* border-color: #e85050ee; */
   border: 1px solid black;
@@ -71,13 +71,13 @@
   color: white;
   font-size: 20px;
 }
-.mail form input:hover {
+.login form input:hover {
   opacity: 0.8;
   /* form input:focus {
   background-color: lightblue;
 } */
 }
-.mail form button {
+.login form button {
   /* @apply text-lg font-medium uppercase py-1 px-4 border border-white inline-block mt-2 bg-transparent; */
 
   /* transition: box-shadow 0.4s linear; */
@@ -107,7 +107,7 @@
   transition: box-shadow 0.3s ease-in-out;
 }
 
-.mail form button:hover {
+.login form button:hover {
   /* @apply bg-white/20; */
   /* border-color: #bb2828a7; */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.6);

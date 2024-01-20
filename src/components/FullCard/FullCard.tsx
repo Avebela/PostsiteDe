@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 
-import { EditablePostName } from "../Form/EditForm/EditForm";
+import { EditablePostName } from "./EditForm/EditForm";
 
 export const FullCard: FC = () => {
   const { id } = useParams();
@@ -43,7 +43,7 @@ export const FullCard: FC = () => {
     );
   }
   return (
-    <div className={classes.post_wrap}>
+    <div>
       {isEditing ? (
         <EditablePostName
           formData={card}
@@ -63,31 +63,31 @@ export const FullCard: FC = () => {
           isLoading={isUpdating}
         />
       ) : (
-        <div className={classes.post_item}>
-          <div className={classes.item_content}>
-            {/* <img src={card.img} alt={card.title} /> */}
-            <div className={classes.item_body}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-              <p>_____________________</p>
-              <p>{card.story}</p>
-
-              <div className={classes.item_footer}>
-                <div className={classes.link}>
-                  {/* <span>Подробнее</span> */}
-                  <button
-                    onClick={() => setIsEditing(true)}
-                    disabled={isDeleting || isUpdating}
-                  >
-                    {isUpdating ? "Updating..." : "Edit"}
-                  </button>
-                  <button onClick={() => deleteCard(id)} disabled={isDeleting}>
-                    {isDeleting ? "Deleting..." : "Delete"}
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className={classes.fullcard}>
+          <form>
+            <h1>{card.title}</h1>
+            <hr />
+            <p>{card.description}</p>
+            <hr />
+            <p>{card.story}</p>
+            <hr />
+            {/* <div className={classes.item_footer}> */}
+            {/* <div className={classes.link}> */}
+            {/* <span>Подробнее</span> */}
+            <button
+              onClick={() => setIsEditing(true)}
+              disabled={isDeleting || isUpdating}
+            >
+              {isUpdating ? "Updating..." : "Edit"}
+            </button>
+            <button onClick={() => deleteCard(id)} disabled={isDeleting}>
+              {isDeleting ? "Deleting..." : "Delete"}
+            </button>
+            {/* </div> */}
+            {/* </div> */}
+            {/* </div> */}
+            {/* </div> */}
+          </form>
         </div>
       )}
     </div>

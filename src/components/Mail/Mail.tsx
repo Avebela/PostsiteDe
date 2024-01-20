@@ -37,15 +37,18 @@ export function Mail() {
         <div className={classes.mail__content}> */}
       <form onSubmit={handleSubmit(onSubmit)}>
         {isSuccess ? (
-          <h1>Вы подписаны на рассылку!</h1>
+          <div className={classes.success}>Вы подписаны на рассылку!</div>
         ) : (
+          // <h1>Вы подписаны на рассылку!</h1>
           // <div className={classes.success}>Данные отправлены</div>
           <>
+            {/* <label>Click me <input type="text" /></label> */}
+
             <h1>Хочу получать рассылку!</h1>
             <input type="name" placeholder="Имя" {...register("name")} />
             <input type="email" placeholder="E-mail" {...register("email")} />
             <button disabled={isLoading}>
-              {isLoading ? "Загрузка....." : "Введите данные"}
+              {isLoading ? "Загрузка....." : "Сохранить"}
             </button>
           </>
         )}
