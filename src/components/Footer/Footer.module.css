@@ -50,6 +50,7 @@
   display: flex;
   column-gap: 65px;
   color: white;
+  /* text-decoration: none; */
 }
 
 .footer__nav__btn,

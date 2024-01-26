@@ -9,22 +9,32 @@ import { cardsApi } from "./services/cards/cards.api";
 import { setupListeners } from "@reduxjs/toolkit/query";
 
 import "./styles/reset.css";
-import "./styles/common.css";
+// import "./styles/common.css";
+import "./main.css";
+import authSlice from "./features/auth/authSlice";
+import { userApi } from "./services/user/user.api";
 
 export const store = configureStore({
-  reducer: { [cardsApi.reducerPath]: cardsApi.reducer },
+  reducer: {
+    [cardsApi.reducerPath]: cardsApi.reducer,
+    [userApi.reducerPath]: userApi.reducer,
+    authSlice,
+  },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(cardsApi.middleware),
 });
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
 
 setupListeners(store.dispatch);
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <BrowserRouter>
-      <Provider store={store}>
-        <App />
-      </Provider>
-    </BrowserRouter>
+    {/* <BrowserRouter> */}
+    <Provider store={store}>
+      <App />
+    </Provider>
+    {/* </BrowserRouter> */}
   </React.StrictMode>
 );

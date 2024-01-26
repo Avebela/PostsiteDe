@@ -3,6 +3,13 @@
   --yellow: rgb(220, 171, 24);
   --gray: #7f7f7f;
 }
+
+html,
+body,
+body > div {
+  height: 100%;
+}
+
 body {
   font-family: "Open Sans", sans-serif;
   color: var(--textColor);

@@ -9,13 +9,8 @@ export const Footer = () => {
           <nav className={classes.footer__nav}>
             <ul>
               <li>
-                <a className={classes.footer__nav__btn} href={`/form`}>
-                  Обратная связь
-                </a>
-              </li>
-              <li>
-                <a className={classes.footer__nav__btn} href={`/form`}>
-                  Наши сервисы
+                <a className={classes.footer__nav__btn} href={`/examenA1`}>
+                  Подготовка к экзамену А1
                 </a>
               </li>
               <li>
@@ -24,7 +19,7 @@ export const Footer = () => {
                 <a href={`/about`}>О нас</a>
               </li>
               <li>
-                <a href={`/form`}>Контакты</a>
+                <a href={`/contacts`}>Контакты</a>
               </li>
             </ul>
           </nav>

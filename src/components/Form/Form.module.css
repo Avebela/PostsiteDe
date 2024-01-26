@@ -2,7 +2,10 @@
   /* @apply w-screen min-h-60 relative; */
   /* width: 100vw; */
   position: relative;
-  min-height: 340px;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: calc(100vw / 2);
 
   background-color: var(--yellow);
 }
@@ -15,18 +18,23 @@
 .newform form {
   /* @apply w-max p-3 absolute left-5 top-5 shadow-xl; */
   /* // animation: slideIn 2s ease-in-out; */
-  display: block;
-  width: 400px;
-  padding: 2px;
+  /* display: block;
+  width: 400px; */
+  position: absolute;
+  width: 90%;
+  padding: 20px;
   position: absolute;
   /* 20px */
   /* left: 1.25rem;
     top: 1.25rem;  */
-  left: 450px;
-  top: 60px;
+  /* left: 450px;
+  top: 60px; */
+  left: 55px;
+  top: 30px;
   background-color: white;
-  box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
-    0 8px 10px -6px rgb(0 0 0 / 0.1);
+  color: black;
+  /* box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+    0 8px 10px -6px rgb(0 0 0 / 0.1); */
 }
 
 .newform form h1 {
@@ -63,7 +71,9 @@
     transition-duration: 0.35s; */
   /* transition: border-color 0.4s linear; */
 }
-
+.newform form textarea {
+  height: 400px;
+}
 .newform form input:focus,
 .newform form textarea:focus {
   /* @apply border-[#ffb3c0]; */
@@ -97,6 +107,10 @@
   /* border-width: 1px;
     border-color: rgb(216, 75, 75); */
   display: inline-block;
+  /* margin-top: 8px; */
+  width: 200px;
+  margin-left: 250px;
+
   margin-top: 8px;
   /* margin-top: 0.5rem; */
   color: white;

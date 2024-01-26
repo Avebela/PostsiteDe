@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Form.module.css";
 import { useAddCardMutation } from "../../services/cards/index.js";
-
+import { Navigate } from "react-router-dom";
 export const Form: React.FC = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -34,6 +34,13 @@ export const Form: React.FC = () => {
     });
   };
 
+  const handleCancel = () => {
+    return (
+      <div>
+        <Navigate to="/cards" />
+      </div>
+    );
+  };
   return (
     <section className={classes.newform}>
       <form onSubmit={handleSubmit}>
@@ -65,10 +72,12 @@ export const Form: React.FC = () => {
           name="img"
           placeholder="Ссылка на изображение"
           value={formData.img}
-          onChange={handleChange}
+          onChange={() => handleCancel()}
         />
 
-        <button type="submit">Отправить</button>
+        <button type="submit">Сохранить</button>
+
+        <button onClick={handleCancel}>Отменить</button>
       </form>
     </section>
   );

@@ -5,9 +5,10 @@ import { Form } from "../Form/Form";
 import { FullCard } from "../FullCard/FullCard";
 
 //import { EditForm } from "../Form/EditForm";
+import { ExamenA1 } from "../../pages/ExamenA1";
 
 import { ShowVideo } from "../Video/ShowVideo/ShowVideo";
-
+import { Contacts } from "../../pages/Contacts";
 import { Createpost } from "../../pages/Createpost";
 import { Homepage } from "../../pages/Homepage";
 import { About } from "../../pages/Aboutpage";
@@ -25,6 +26,9 @@ export const Routers = () => {
         <Route path="about us" element={<Navigate to="/about" replace />} />
         <Route path="login" element={<Loginpage />} />
         {/* <Route path="/" element={<App />} /> */}
+        src/pages/Contacts.tsx
+        <Route path="contacts" element={<Contacts />} />
+        <Route path="examenA1" element={<ExamenA1 />} />
         <Route path="cards" element={<Cards />} />
         <Route path="form" element={<Form />} />
         <Route
