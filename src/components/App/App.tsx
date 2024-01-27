@@ -7,7 +7,7 @@ import { Paths } from "../Routers/paths";
 import { Login } from "../../pages/Login";
 import { Register } from "../../pages/Register";
 import { ConfigProvider, theme } from "antd";
-
+import { Auth } from "../../features/auth/auth";
 const router = createBrowserRouter([
   {
     path: Paths.home,
@@ -28,7 +28,9 @@ export const App = () => {
     // <AuthProvider>
     // <Routers />
     <ConfigProvider theme={{ algorithm: theme.darkAlgorithm }}>
-      <RouterProvider router={router} />
+      <Auth>
+        <RouterProvider router={router} />
+      </Auth>
     </ConfigProvider>
     // </AuthProvider>
   );

@@ -13,15 +13,19 @@ import "./styles/reset.css";
 import "./main.css";
 import authSlice from "./features/auth/authSlice";
 import { userApi } from "./services/user/user.api";
+import { ListenerMiddleware } from "./middleware/auth";
 
 export const store = configureStore({
   reducer: {
     [cardsApi.reducerPath]: cardsApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
+
     authSlice,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(cardsApi.middleware),
+    getDefaultMiddleware()
+      .concat([cardsApi.middleware, userApi.middleware])
+      .prepend(ListenerMiddleware.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
