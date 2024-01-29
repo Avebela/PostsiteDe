@@ -14,13 +14,14 @@ import "./main.css";
 import authSlice from "./features/auth/authSlice";
 import { userApi } from "./services/user/user.api";
 import { ListenerMiddleware } from "./middleware/auth";
+import commentSlice from "./features/comment/commentSlice";
 
 export const store = configureStore({
   reducer: {
     [cardsApi.reducerPath]: cardsApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
-
     authSlice,
+    commentSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware()

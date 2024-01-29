@@ -6,12 +6,30 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { Paths } from "../Routers/paths";
 import { Login } from "../../pages/Login";
 import { Register } from "../../pages/Register";
+import { Comments } from "../../pages/Comments";
 import { ConfigProvider, theme } from "antd";
 import { Auth } from "../../features/auth/auth";
+import { NewComment } from "../../pages/Comments/NewComment";
+
+import { Comment } from "../../pages/Comments/Comment";
+import { Status } from "../../pages/Status";
+
 const router = createBrowserRouter([
   {
     path: Paths.home,
-    element: <h1>Home</h1>,
+    element: <Comments />,
+  },
+  {
+    path: Paths.comments,
+    element: <Comments />,
+  },
+  {
+    path: `${Paths.comment}/:id`,
+    element: <Comment />,
+  },
+  {
+    path: Paths.commentNew,
+    element: <NewComment />,
   },
   {
     path: Paths.login,
@@ -20,6 +38,10 @@ const router = createBrowserRouter([
   {
     path: Paths.register,
     element: <Register />,
+  },
+  {
+    path: `${Paths.status}/:status`,
+    element: <Status />,
   },
 ]);
 
