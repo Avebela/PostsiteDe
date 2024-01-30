@@ -10,7 +10,7 @@ import { Comments } from "../../pages/Comments";
 import { ConfigProvider, theme } from "antd";
 import { Auth } from "../../features/auth/auth";
 import { NewComment } from "../../pages/Comments/NewComment";
-
+import { EditComment } from "../../pages/Comments/EditComment";
 import { Comment } from "../../pages/Comments/Comment";
 import { Status } from "../../pages/Status";
 
@@ -30,6 +30,10 @@ const router = createBrowserRouter([
   {
     path: Paths.commentNew,
     element: <NewComment />,
+  },
+  {
+    path: `${Paths.commentEdit}/:id`,
+    element: <EditComment />,
   },
   {
     path: Paths.login,

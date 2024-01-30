@@ -3,8 +3,8 @@ export const Paths = {
   comments: "/comment",
   comment: "/comment",
   commentNew: "/comment/new",
-  commentUpdate: "/comment/edit",
-  commentDelete: "/comment",
+  commentEdit: "/comment/edit",
+
   status: "/status",
   login: "/clogin",
   register: "/cregister",

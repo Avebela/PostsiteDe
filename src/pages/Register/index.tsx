@@ -3,9 +3,38 @@ import { Layout } from "../../components/Layout";
 import { CustomInput } from "../../components/CustomInput";
 import { CustomButton } from "../../components/CustomButton";
 import { PasswordInput } from "../../components/PasswordInput";
-import { Link } from "react-router-dom";
 import { Paths } from "../../components/Routers/paths";
+import { Link, useNavigate } from "react-router-dom";
+import { UserData, useLoginMutation } from "../../services/auth/auth.api";
+import { isErrorWithMessage } from "../../utils/is-error-with-message";
+import { ErrorMessage } from "../../components/Error-message";
+import { useSelector } from "react-redux";
+import { selectUser } from "../../features/auth/authSlice";
+import { useState } from "react";
+import { useRegisterMutation } from "../../services/auth/auth.api";
+import { User } from "../../services/user/user.types";
+
+type RegisterData = Omit<User, "id"> & { confirmPassword: string };
+
 export const Register = () => {
+  const navigate = useNavigate();
+  const user = useSelector(selectUser);
+  const [redisterUser] = useRegisterMutation();
+  const [error, setError] = useState("");
+  const register = async (data: RegisterData) => {
+    try {
+      await redisterUser(data).unwrap();
+
+      navigate(Paths.home);
+    } catch (error) {
+      const maybeError = isErrorWithMessage(error);
+      if (maybeError) {
+        setError(error.data.message);
+      } else {
+        setError("Неизвестная ошибка");
+      }
+    }
+  };
   return (
     <Layout>
       <Row align="middle" justify="center">
@@ -15,7 +44,7 @@ export const Register = () => {
             width: "30rem",
           }}
         >
-          <Form onFinish={() => null}>
+          <Form onFinish={register}>
             <CustomInput name="name" placeholder="Имя" />
 
             <CustomInput name="email" placeholder="Email" type="email" />
@@ -34,6 +63,7 @@ export const Register = () => {
               Уже зарегистрированы?
               <Link to={Paths.login}> Войдите</Link>
             </Typography.Text>
+            <ErrorMessage message={error} />
           </Space>
         </Card>
       </Row>
