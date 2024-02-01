@@ -23,8 +23,18 @@ export const CommentForm = ({
   return (
     <Card title={title} style={{ width: "38rem" }}>
       <Form name="comment-form" onFinish={onFinish} initialValues={comment}>
-        <CustomInput type="text" name="title" placeholder="Заголовок" />
-        <CustomInput type="text" name="body" placeholder="Текст комментария" />
+        <label>
+          <i> Заголовок</i>
+          <CustomInput type="text" name="title" placeholder="Заголовок" />
+        </label>
+        <label>
+          <i> Текст комментария</i>
+          <CustomInput
+            type="text"
+            name="body"
+            placeholder="Текст комментария"
+          />
+        </label>
         <Space>
           <ErrorMessage message={error} />
           <CustomButton htmlType="submit">{btnText}</CustomButton>

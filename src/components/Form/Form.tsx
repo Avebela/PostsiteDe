@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import classes from "./Form.module.css";
 import { useAddCardMutation } from "../../services/cards/index.js";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 export const Form: React.FC = () => {
   const [formData, setFormData] = useState({
     title: "",
@@ -9,7 +9,7 @@ export const Form: React.FC = () => {
     img: "",
     story: "",
   });
-
+  const navigate = useNavigate();
   const [fetchAddCard] = useAddCardMutation();
 
   const handleChange = (
@@ -23,15 +23,20 @@ export const Form: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault;
-    fetchAddCard(formData);
-    setFormData({
-      title: "",
-      description: "",
-      img: "",
-      story: "",
-    });
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    try {
+      e.preventDefault;
+      await fetchAddCard(formData);
+      setFormData({
+        title: "",
+        description: "",
+        img: "",
+        story: "",
+      });
+      navigate("/cards");
+    } catch (e) {
+      console.log("Ошибка"!);
+    }
   };
 
   const handleCancel = () => {

@@ -2,6 +2,7 @@
   --textColor: rgb(119, 6, 17);
   --yellow: rgb(220, 171, 24);
   --gray: #7f7f7f;
+  --bk-gray: #dde1df7d;
 }
 
 html,
@@ -18,7 +19,7 @@ body {
 .container {
   max-width: 1340px;
   margin: 0 auto;
-  padding: 0 10px;
+  padding: 0 20px;
 }
 
 .title2 {

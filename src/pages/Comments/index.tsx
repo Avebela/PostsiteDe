@@ -8,7 +8,7 @@ import { useGetAllCommentsQuery } from "../../services/comment/comment.api";
 import type { ColumnsType } from "antd/es/table";
 import { Comment } from "../../services/comment/comment.types";
 import { useNavigate } from "react-router-dom";
-import { Paths } from "../../components/Routers/paths";
+import { Paths } from "../../routers/paths";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../features/auth/authSlice";
 const columns: ColumnsType<Comment> = [
@@ -38,6 +38,7 @@ export const Comments = () => {
   const goToAddUser = () => navigate(Paths.commentNew);
 
   return (
+    // <div className="container">
     <Layout>
       <CustomButton
         type="primary"

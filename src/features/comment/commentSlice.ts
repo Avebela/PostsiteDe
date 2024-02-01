@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { commentApi } from "../../services/comment/comment.api";
-import { RootState } from "../../main";
+import { RootState } from "../../store";
 import { CommentsResponse } from "../../services/comment/comment.types";
 
 interface InitialState {

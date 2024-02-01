@@ -1,13 +1,13 @@
 import { Descriptions, Divider, Space, Modal } from "antd";
 import { selectUser } from "../../../features/auth/authSlice";
-import React, { useState } from "react";
+import { useState } from "react";
 import { useSelector } from "react-redux";
 import { useNavigate, useParams, Navigate } from "react-router-dom";
 import {
   useDeleteCommentMutation,
   useGetCommentByIdQuery,
 } from "../../../services/comment/comment.api";
-import { Paths } from "../../../components/Routers/paths";
+import { Paths } from "../../../routers/paths";
 import { Layout } from "../../../components/Layout";
 import { CustomButton } from "../../../components/CustomButton";
 import { EditOutlined } from "@ant-design/icons";
@@ -17,16 +17,16 @@ import { isErrorWithMessage } from "../../../utils/is-error-with-message";
 export const Comment = () => {
   const navigate = useNavigate();
   const [error, setError] = useState("");
-  const params = useParams<{ id: string }>();
+  const { id } = useParams<{ id: string }>();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { data, isLoading } = useGetCommentByIdQuery(params.id || "");
+  const { data, isLoading } = useGetCommentByIdQuery(id || "");
   const [deleteComment] = useDeleteCommentMutation();
   const user = useSelector(selectUser);
   if (isLoading) {
-    return <span>Загрузка</span>;
+    return <span>Загрузка...</span>;
   }
   if (!data) {
-    return <Navigate to={Paths.home} />;
+    return <Navigate to={Paths.comments} />;
   }
 
   const showModal = () => {
@@ -39,7 +39,7 @@ export const Comment = () => {
     hideModal();
     try {
       await deleteComment(data.id).unwrap();
-      navigate(`${Paths.status}/delete`);
+      navigate(`${Paths.status}/deleted`);
     } catch (error) {
       const maybeError = isErrorWithMessage(error);
       if (maybeError) {
@@ -52,8 +52,9 @@ export const Comment = () => {
   // console.log(user!.id);
   // console.log(data.userId);
   return (
+    // <div className="container">
     <Layout>
-      <Descriptions title="Просмотр комментария" bordered>
+      <Descriptions layout="vertical" title="Просмотр комментария" bordered>
         <Descriptions.Item label="Заголовок" span={3}>
           {data.title}
         </Descriptions.Item>

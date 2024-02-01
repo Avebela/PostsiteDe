@@ -3,7 +3,7 @@ import { Layout } from "../../components/Layout";
 import { CustomInput } from "../../components/CustomInput";
 import { CustomButton } from "../../components/CustomButton";
 import { PasswordInput } from "../../components/PasswordInput";
-import { Paths } from "../../components/Routers/paths";
+import { Paths } from "../../routers/paths";
 import { Link, useNavigate } from "react-router-dom";
 import { UserData, useLoginMutation } from "../../services/auth/auth.api";
 import { isErrorWithMessage } from "../../utils/is-error-with-message";
@@ -36,6 +36,7 @@ export const Register = () => {
     }
   };
   return (
+    // <div className="container">
     <Layout>
       <Row align="middle" justify="center">
         <Card

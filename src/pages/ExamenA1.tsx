@@ -1,8 +1,10 @@
+import { Layout } from "../components/Layout";
 const ExamenA1 = () => {
   return (
-    <div className="container">
+    // <div className="container">
+    <Layout>
       <h1>
-        Хотит в коротокие сроки подготовиться и успешно сдать экзамент А1?{" "}
+        Хотите в коротокие сроки подготовиться и успешно сдать экзамент А1?{" "}
       </h1>
       <article>
         Вы можете перейти на сайт по подготовке к международному экзамену по
@@ -11,7 +13,7 @@ const ExamenA1 = () => {
       <div>
         <a href={`/video`}>перейти на сайт</a>
       </div>
-    </div>
+    </Layout>
   );
 };
 

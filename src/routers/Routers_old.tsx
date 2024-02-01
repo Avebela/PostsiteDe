@@ -1,26 +1,26 @@
 import { Routes, Route, Navigate } from "react-router-dom";
 
-import { Cards } from "../Cards/Cards";
-import { Form } from "../Form/Form";
-import { FullCard } from "../FullCard/FullCard";
+import { Cards } from "../components/Cards/Cards";
+import { Form } from "../components/Form/Form";
+import { FullCard } from "../components/FullCard/FullCard";
 
 //import { EditForm } from "../Form/EditForm";
-import { ExamenA1 } from "../../pages/ExamenA1";
+import { ExamenA1 } from "../pages/ExamenA1";
 
-import { ShowVideo } from "../Video/ShowVideo/ShowVideo";
-import { Contacts } from "../../pages/Contacts";
-import { Createpost } from "../../pages/Createpost";
-import { Homepage } from "../../pages/Homepage";
-import { About } from "../../pages/Aboutpage";
-import { Blogpage } from "../../pages/Blogpage";
-import { Notfoundpage } from "../../pages/Notfoundpage";
-import { Layout } from "../App/Layout";
-import { Loginpage } from "../../pages/Login/Loginpage";
-import { RequireAuth } from "../../hoc/RequireAuth";
+import { ShowVideo } from "../components/Video/ShowVideo/ShowVideo";
+import { Contacts } from "../pages/Contacts";
+import { Createpost } from "../pages/Createpost";
+import { Homepage } from "../pages/Homepage";
+import { About } from "../pages/Aboutpage";
+import { Blogpage } from "../pages/Blogpage";
+import { Notfoundpage } from "../pages/Notfoundpage";
+import { MainLayout } from "../components/App/MainLayout";
+import { Loginpage } from "../pages/Login/Loginpage";
+import { RequireAuth } from "../hoc/RequireAuth";
 export const Routers = () => {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route index element={<Homepage />} />
         <Route path="about" element={<About />} />
         <Route path="about us" element={<Navigate to="/about" replace />} />

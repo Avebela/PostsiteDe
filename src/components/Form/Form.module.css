@@ -62,7 +62,7 @@
   /* border-color: transparent; */
   /* border-color: brown; */
 
-  background-color: #dde1df7d;
+  background-color: var(--bk-gray);
   /* color: rgba(217, 122, 122, 0.939); */
   /* outline: 2px solid transparent;
     outline-offset: 2px; */

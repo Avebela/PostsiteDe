@@ -17,13 +17,13 @@ import { ShowVideo } from "../components/Video/ShowVideo/ShowVideo";
 
 export const Homepage = () => {
   return (
-    <div>
+    <>
       <Promo />
       <Brands />
       <Cards />
       <Video />
       <Arrivals />
       <Mail />
-    </div>
+    </>
   );
 };

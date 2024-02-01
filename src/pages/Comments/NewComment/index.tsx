@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectUser } from "../../../features/auth/authSlice";
 import { useAddCommentMutation } from "../../../services/comment/comment.api";
-import { Paths } from "../../../components/Routers/paths";
+import { Paths } from "../../../routers/paths";
 import { Comment } from "../../../services/comment/comment.types";
 import { isErrorWithMessage } from "../../../utils/is-error-with-message";
 
@@ -35,10 +35,11 @@ export const NewComment = () => {
   };
 
   return (
+    // <div className="container">
     <Layout>
       <Row align="middle" justify="center">
         <CommentForm
-          title="Добавить сотрудника"
+          title="Добавить комментарий"
           btnText="Добавить"
           onFinish={handleAddComment}
           error={error}

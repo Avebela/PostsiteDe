@@ -1,28 +1,33 @@
-.header {
+.footer {
   padding: 20px 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-bottom: 20px;
 }
-.header__icon {
-  font-size: 26px;
-  margin-right: 8px;
+.footer__icon {
+  display: flex;
+  align-items: center;
 }
 
-.header__nav {
+.footer__nav {
   font-weight: 500;
   font-size: 22px;
   line-height: 1.5;
   letter-spacing: 0.01em;
 }
 
-.header__nav ul {
+.footer__nav ul {
   display: flex;
   column-gap: 65px;
   align-items: center;
 }
 
-.header__nav a {
+.footer__nav a {
   color: var(--textColor);
+}
+
+.footer__icon img {
+  width: 120px;
+  height: 120px;
 }
